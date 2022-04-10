@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="ViewModel"
+            type="com.example.transaction.viewModel.ShopViewModel" />
+
+        <variable
+            name="Click"
+            type="com.example.transaction.view.fragment.ShopFragment.ProxyClick" />
+    </data>
+
+    <RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary"
+        tools:context=".view.fragment.ShopFragment">
+
+        <RelativeLayout
+            android:id="@+id/shop_rl_title"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:id="@+id/shop_sign"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="30dp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/shop_sign_ci"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/sign_ci" />
+
+                <TextView
+                    android:id="@+id/shop_sign_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/shop_sign_ci"
+                    android:text="签到"
+                    android:textColor="@color/orange"
+                    android:textSize="20dp" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="推荐"
+                android:textColor="@color/orange"
+                android:textSize="25sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/shop_rl_search"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@id/shop_rl_title"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/shape_shop_search_rl"
+            android:onClick="@{()->Click.toSearch()}">
+
+            <ImageView
+                android:id="@+id/shop_search_scan"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:src="@drawable/scan" />
+
+            <Button
+                android:id="@+id/shop_search_bt"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/shape_shop_search_bt"
+                android:text="搜索"
+                android:textColor="@color/white" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/shop_ll_menu"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:layout_below="@id/shop_rl_search"
+            android:layout_marginTop="5dp"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:onClick="@{()->Click.insertGoods()}"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:id="@+id/shop_menu_rl_new"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@color/colorPrimary">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_above="@id/shop_menu_tv_new"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/dog" />
+
+                    <TextView
+                        android:id="@+id/shop_menu_tv_new"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="3dp"
+                        android:text="地狗新品"
+                        android:textColor="@color/black"
+                        android:textSize="13sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/shop_menu_rl_hot"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@color/colorPrimary">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_above="@id/shop_menu_tv_hot"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/hot" />
+
+                    <TextView
+                        android:id="@+id/shop_menu_tv_hot"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="3dp"
+                        android:text="今日热销"
+                        android:textColor="@color/black"
+                        android:textSize="13sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/shop_menu_rl_trip"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@color/colorPrimary">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_above="@id/shop_menu_tv_trip"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/trip" />
+
+                    <TextView
+                        android:id="@+id/shop_menu_tv_trip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="3dp"
+                        android:text="去哪旅行"
+                        android:textColor="@color/black"
+                        android:textSize="13sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/shop_menu_rl_shop"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@color/colorPrimary">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_above="@id/shop_menu_tv_shop"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/shop" />
+
+                    <TextView
+                        android:id="@+id/shop_menu_tv_shop"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="3dp"
+                        android:text="地狗超市"
+                        android:textColor="@color/black"
+                        android:textSize="13sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/shop_menu_rl_recharge"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:background="@color/colorPrimary">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_above="@id/shop_menu_tv_recharge"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/recharge" />
+
+                    <TextView
+                        android:id="@+id/shop_menu_tv_recharge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="3dp"
+                        android:text="充值中心"
+                        android:textColor="@color/black"
+                        android:textSize="13sp" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:id="@+id/shop_menu_rl_eat"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_weight="1"
+                    android:background="@color/colorPrimary">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_above="@id/shop_menu_tv_eat"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/eat" />
+
+                    <TextView
+                        android:id="@+id/shop_menu_tv_eat"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="3dp"
+                        android:text="吃货补贴"
+                        android:textColor="@color/black"
+                        android:textSize="13sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/shop_menu_rl_auction"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_weight="1"
+                    android:background="@color/colorPrimary">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_above="@id/shop_menu_tv_auction"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/auction" />
+
+                    <TextView
+                        android:id="@+id/shop_menu_tv_auction"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="3dp"
+                        android:text="去拍卖"
+                        android:textColor="@color/black"
+                        android:textSize="13sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/shop_menu_rl_classification"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_weight="1"
+                    android:background="@color/colorPrimary">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_above="@id/shop_menu_tv_classification"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/classification" />
+
+                    <TextView
+                        android:id="@+id/shop_menu_tv_classification"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="3dp"
+                        android:text="分类"
+                        android:textColor="@color/black"
+                        android:textSize="13sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_weight="1"></RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="5dp"
+                    android:layout_weight="1"></RelativeLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/shop_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/shop_ll_menu"
+            android:layout_marginTop="5dp"
+            android:background="@color/colorPrimary" />
+
+    </RelativeLayout>
+</layout>

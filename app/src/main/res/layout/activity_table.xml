@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="ViewModel"
+            type="com.example.transaction.viewModel.TableViewModel" />
+
+        <variable
+            name="Click"
+            type="com.example.transaction.view.activity.TableActivity.ProxyClick" />
+    </data>
+
+    <RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.activity.TableActivity">
+
+        <FrameLayout
+            android:id="@+id/tab_fl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/tab_ll" />
+
+        <LinearLayout
+            android:id="@+id/tab_ll"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tab_shop"
+                style="@style/TabButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:drawableTop="@drawable/tab_shop_selector"
+                android:onClick="@{()->Click.toShop()}"
+                android:text="@string/tab_menu_home" />
+
+            <TextView
+                android:id="@+id/tab_message"
+                style="@style/TabButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/tab_message_selector"
+                android:onClick="@{()->Click.toMessage()}"
+                android:text="@string/tab_menu_message" />
+
+            <TextView
+                android:id="@+id/tab_cart"
+                style="@style/TabButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/tab_cart_selector"
+                android:onClick="@{()->Click.toCart()}"
+                android:text="@string/tab_menu_cart" />
+
+            <TextView
+                android:id="@+id/tab_private"
+                style="@style/TabButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/tab_priifo_selector"
+                android:onClick="@{()->Click.toPrivate()}"
+                android:text="@string/tab_menu_priIfo" />
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

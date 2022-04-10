@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="ViewModel"
+            type="com.example.transaction.viewModel.login.LoginViewModel" />
+
+        <variable
+            name="Click"
+            type="com.example.transaction.view.activity.login.LoginActivity.ProxyClick" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/login_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:layout_alignParentTop="true"
+            android:theme="@style/AppTheme.MyNoActionBar"
+            app:navigationIcon="@drawable/tool_bar_back"
+            app:titleTextAppearance="@style/ToolbarTitleSize" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp">
+
+            <EditText
+                android:id="@+id/login_account"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/shape_login_et"
+                android:gravity="center"
+                android:hint="请输入账号"
+                android:maxLines="1" />
+
+            <EditText
+                android:id="@+id/login_passwrod"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@id/login_account"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/shape_login_et"
+                android:gravity="center"
+                android:hint="请输入密码"
+                android:maxLines="1" />
+
+            <Button
+                android:id="@+id/login_button"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@id/login_passwrod"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/shape_login_bt"
+                android:onClick="@{()->Click.login()}"
+                android:text="登录"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@id/login_button">
+
+                <TextView
+                    android:id="@+id/forgot"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="15dp"
+                    android:layout_toLeftOf="@id/division"
+                    android:onClick="@{()->Click.toForgot()}"
+                    android:text="忘记密码" />
+
+                <TextView
+                    android:id="@+id/division"
+                    android:layout_width="1dp"
+                    android:layout_height="20dp"
+                    android:layout_centerInParent="true"
+                    android:background="@color/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/register"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_toRightOf="@id/division"
+                    android:onClick="@{()->Click.toRegister()}"
+                    android:text="账号注册" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</layout>

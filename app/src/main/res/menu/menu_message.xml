@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_message_call"
+        android:icon="@drawable/call"
+        android:orderInCategory="90"
+        android:title="@string/address_list_title"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/menu_message_chat"
+        android:icon="@drawable/launch_chat"
+        android:orderInCategory="100"
+        android:title="@string/launch_chat"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_message_add_fri"
+        android:icon="@drawable/add_friends"
+        android:orderInCategory="100"
+        android:title="@string/add_friends"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_message_scan"
+        android:icon="@drawable/scan"
+        android:orderInCategory="100"
+        android:title="@string/scan"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_message_msg_manage"
+        android:icon="@drawable/msg_manage"
+        android:orderInCategory="100"
+        android:title="@string/message_manage"
+        app:showAsAction="never" />
+</menu>

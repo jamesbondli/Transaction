@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">交易app（MVVM+Jetpack重构版）</string>
+    <string name="tab_menu_home">首页</string>
+    <string name="tab_menu_message">信息</string>
+    <string name="tab_menu_cart">购物车</string>
+    <string name="tab_menu_priIfo">个人信息</string>
+
+    <string name="message_title">消息</string>
+    <string name="message_search">搜索</string>
+    <string name="search_cancel">取消</string>
+    <string name="search_custom">搜索指定内容</string>
+    <string name="search_bt_contact">联系人</string>
+    <string name="search_bt_message">消息号</string>
+    <string name="search_bt_group_chat">群聊</string>
+    <string name="search_bt_record">聊天记录</string>
+    <string name="search_bt_goods">聊天商品</string>
+    <string name="search_bt_shop">店铺</string>
+    <string name="address_list_title">通讯录</string>
+    <string name="launch_chat">发起聊天</string>
+    <string name="add_friends">添加好友</string>
+    <string name="scan">扫一扫</string>
+    <string name="message_manage">消息管理</string>
+</resources>
